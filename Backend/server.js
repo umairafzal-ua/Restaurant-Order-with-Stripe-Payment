@@ -16,10 +16,15 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/payments', stripeRoutes);
 
+// Optional: Root route so you don’t see "Cannot GET /"
+app.get('/', (req, res) => {
+  res.send('Backend API is running 🚀');
+});
+
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-// ⚡ Remove app.listen for Vercel
+// ⚡ Vercel expects a function
 module.exports = app;

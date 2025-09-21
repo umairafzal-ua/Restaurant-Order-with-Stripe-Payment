@@ -1,0 +1,28 @@
+@keyframes spin-slow {
+ 0%{
+    transform: rotate(0deg);
+ }
+ 100%{
+    transform: rotate(360deg);
+ }   
+
+}
+.animate-spin-slow {
+    animation: spin-slow 10s linear infinite; 
+  }
+
+  @keyframes slideInLeft {
+   from {
+     transform: translateX(-100%);
+     opacity: 0;
+   }
+   to {
+     transform: translateX(0);
+     opacity: 1;
+   }
+ }
+ 
+ .slide-in-left {
+   animation: slideInLeft 0.5s forwards;
+ }
+ 

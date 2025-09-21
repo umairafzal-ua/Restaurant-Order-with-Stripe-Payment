@@ -22,7 +22,7 @@ const CheckoutForm = ({ totalBill }) => {
 
     try {
       // ✅ Call backend
-      const response = await fetch('http://localhost:3000/payments/create-payment-intent', {
+      const response = await fetch('http://restaurant-order-with-stripe-paymen-seven.vercel.app/payments/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: totalBill * 100 }), // Stripe uses cents
